@@ -3,5 +3,6 @@
 {{/app-page-title}}
 
 {{#app-form}}
-  {{app-form-input inputName="Name" inputType="text"}}
+  {{app-form-input inputName="Name" inputType="text" bindValue=model }}
+  <button {{action 'save'}} class="btn btn-success">Salvar</button>
 {{/app-form}}

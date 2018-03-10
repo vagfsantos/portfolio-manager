@@ -1,4 +1,4 @@
 <div class="form-group">
   <label for="{{inputNameForProperty}}">{{inputNameForUI}}</label>
-  <input type="{{inputType}}" class="form-control" id="{{inputNameForProperty}}" placeholder="Enter {{inputNameForProperty}}" name="{{inputNameForProperty}}">
+  {{ input type=inputType value=bindValue.paga_data.name class="form-control" id=inputNameForProperty placeholder=(concat "Enter" inputNameForProperty) }}
 </div>
