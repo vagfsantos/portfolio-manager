@@ -1,12 +1,14 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand text-uppercase" href="#">admin</a>
     </div>
     <ul class="nav navbar-nav">
       {{#each navbar as |link|}}
         <li>
-          <a href="{{link.route}}">{{link.name}}</a>
+          {{#link-to link.route}}
+            {{link.name}}
+          {{/link-to}}
         </li>
       {{/each}}
     </ul>
