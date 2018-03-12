@@ -1,8 +1,15 @@
-{{#app-page-title}}
-  About
-{{/app-page-title}}
+{{#each model as |form|}}
 
-{{#app-form}}
-  {{app-form-input inputName="Name" inputType="text" bindValue=model }}
-  <button {{action 'save'}} class="btn btn-success">Salvar</button>
-{{/app-form}}
+  {{#app-page-title}}
+    {{form.title}}
+  {{/app-page-title}}
+
+  {{#app-form}}
+    {{#each form.form_fields as |form_data|}}
+      {{app-form-input form_data=form_data}}
+    {{/each}}
+    <button {{action 'save' model}} class="btn btn-success">Save</button>
+    <button {{action 'cancel'}} class="btn btn-danger">Cancel</button>
+  {{/app-form}}
+
+{{/each}}

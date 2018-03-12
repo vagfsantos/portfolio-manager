@@ -1,4 +1,9 @@
 <div class="form-group">
-  <label for="{{inputNameForProperty}}">{{inputNameForUI}}</label>
-  {{ input type=inputType value=bindValue.paga_data.name class="form-control" id=inputNameForProperty placeholder=(concat "Enter" inputNameForProperty) }}
+  <label for="{{inputName}}">{{form_data.name}}</label>
+
+  {{#if isInput}}
+    {{input type='text' value=form_data.content class="form-control" id=inputName placeholder=placeholderName}}
+  {{else}}
+    {{textarea value=form_data.content class="form-control" id=inputName placeholder=placeholderName}}
+  {{/if}}
 </div>

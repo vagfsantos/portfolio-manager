@@ -8,16 +8,17 @@ export default Route.extend({
 
   actions: {
 
-    save() {
+    save(model) {
 
-      console.log(this.get('store').findAll('about'))
-      return
+      model.save()
+        .then((a)=>{
+          console.log(a)
+        })
+    },
 
-      this.store.createRecord('about', {
-        data: {
-          name: this.model.page_data
-        }
-      }).save()
+    cancel(model) {
+
+      this.transitionTo('/')
     }
   }
 });
