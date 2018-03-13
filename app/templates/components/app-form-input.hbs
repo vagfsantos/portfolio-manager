@@ -1,9 +1,13 @@
 <div class="form-group">
-  <label for="{{inputName}}">{{form_data.name}}</label>
+  <label for="{{form_data.name}}">{{form_data.name}}</label>
 
-  {{#if isInput}}
-    {{input type='text' value=form_data.content class="form-control" id=inputName placeholder=placeholderName}}
-  {{else}}
-    {{textarea value=form_data.content class="form-control" id=inputName placeholder=placeholderName}}
-  {{/if}}
+  {{#each form_data.inputs as |form_input|}}
+    <div class="app-form-input__group">
+      {{#if (is-input form_input.type)}}
+        {{input type=form_input.type value=form_input.content class="form-control" id=form_input.name placeholder=form_input.name}}
+      {{else}}
+        {{textarea value=form_input.content class="form-control" id=form_input.name placeholder=form_input.name}}
+      {{/if}}
+    </div>
+  {{/each}}
 </div>

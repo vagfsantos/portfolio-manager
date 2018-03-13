@@ -7,10 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-
   this.route('index', { path: '/' }, function(){
-
-    this.route('about', { path: '/about' });
+    this.route('about');
+    this.route('skill');
   });
 });
 
