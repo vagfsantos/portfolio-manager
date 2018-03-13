@@ -10,7 +10,8 @@ export default Route.extend({
 
     save(model) {
 
-      model.save()
+      model
+        .save()
         .then((a)=>{
           console.log(a)
         })

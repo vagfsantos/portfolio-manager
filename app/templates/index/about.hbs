@@ -6,9 +6,17 @@
 
   {{#app-form}}
     {{#each form.form_fields as |form_data|}}
-      {{app-form-input form_data=form_data}}
+
+      <div class="form-group">
+        <label>{{ form_data.label }}</label>
+        {{#each form_data.inputs as |form_input|}}
+          {{input class="form-control" value=form_input.content placeholder=form_input.name id=form_input.name}}
+        {{/each}}
+      </div>
+
     {{/each}}
-    <button {{action 'save' model}} class="btn btn-success">Save</button>
+
+    <button {{action 'save' form}} class="btn btn-success">Save</button>
     <button {{action 'cancel'}} class="btn btn-danger">Cancel</button>
   {{/app-form}}
 
