@@ -7,9 +7,11 @@ export default Route.extend({
     return this.store.findAll('about')
   },
 
-  getPageTitle() {
+  actions: {
 
-    console.log(this.get('store').forEach)
+    save(model) {
 
+      model.save()
+    }
   }
 });
